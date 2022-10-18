@@ -1,34 +1,71 @@
-package simplefactory
+package main
 
 import "fmt"
 
-// API is interface
-type API interface {
-	Say(name string) string
+// ======== 抽象层 ============
+
+// 水果类（抽象接口）
+
+type Fruit interface {
+	Show()
 }
 
-// NewAPI return Api instance by type
-func NewAPI(t int) API {
-	if t == 1 {
-		return &hiAPI{}
-	} else if t == 2 {
-		return &helloAPI{}
+// ========= 基础类模块 ================
+
+type Apple struct {
+	Fruit
+}
+
+func (apple *Apple) Show() {
+	fmt.Println("i am a apple")
+}
+
+type Banana struct {
+	Fruit
+}
+
+func (banana *Banana) Show() {
+	fmt.Println("i am a banana")
+}
+
+type Pear struct {
+	Fruit
+}
+
+func (pear *Pear) Show() {
+	fmt.Println("i am a pear")
+}
+
+// =============== 工厂模块 ===============
+
+type Factory struct {
+}
+
+func (fac *Factory) CreateFruit(kind string) Fruit {
+	var fruit Fruit
+
+	if kind == "apple" {
+		fruit = new(Apple)
+	} else if kind == "banana" {
+		fruit = new(Banana)
+	} else if kind == "pear" {
+		fruit = new(Pear)
 	}
-	return nil
+
+	return fruit
 }
 
-// hiAPI is one of API implement
-type hiAPI struct{}
+// =========== 业务逻辑层 ===============
 
-// Say hi to name
-func (*hiAPI) Say(name string) string {
-	return fmt.Sprintf("Hi, %s", name)
-}
+func main() {
+	factory := new(Factory)
 
-// HelloAPI is another API implement
-type helloAPI struct{}
+	apple := factory.CreateFruit("apple")
+	apple.Show()
 
-// Say hello to name
-func (*helloAPI) Say(name string) string {
-	return fmt.Sprintf("Hello, %s", name)
+	banana := factory.CreateFruit("banana")
+	banana.Show()
+
+	pear := factory.CreateFruit("pear")
+	pear.Show()
 }
