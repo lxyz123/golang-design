@@ -1,5 +1,6 @@
-# golang-design
-<h1>简单工厂模式</h1>
-<body>go 语言没有构造函数一说，所以一般会定义NewXXX函数来初始化相关类。 NewXXX 函数返回接口时就是简单工厂模式，也就是说Golang的一般推荐做法就是简单工厂。
+#简单工厂模式
+&emsp;&emsp;go 语言没有构造函数一说，所以一般会定义NewXXX函数来初始化相关类。 
 
-在这个simplefactory包中只有API 接口和NewAPI函数为包外可见，封装了实现细节。</body>
+&emsp;&emsp;NewXXX 函数返回接口时就是简单工厂模式，也就是说Golang的一般推荐做法就是简单工厂。
+
+&emsp;&emsp;在这个simpleFactory包中只有API 接口和NewAPI函数为包外可见，封装了实现细节。

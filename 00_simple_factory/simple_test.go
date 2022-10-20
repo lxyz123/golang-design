@@ -1,4 +1,4 @@
-package simplefactory
+package main
 
 import "testing"
 
