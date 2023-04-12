@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 抽象工厂接口
+// ISportsFactory 抽象工厂接口
 type ISportsFactory interface {
 	makeShoe() IShoe
 	makeShirt() IShirt
@@ -167,5 +167,3 @@ func printShirtDetails(s IShirt) {
 	fmt.Printf("Size: %s", s.getSize())
 	fmt.Println()
 }
-
-
