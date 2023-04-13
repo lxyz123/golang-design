@@ -15,7 +15,7 @@ func (f *File) getName() string {
 }
 
 type Folder struct {
-	components []Component
+	components []File
 	name       string
 }
 
@@ -26,6 +26,6 @@ func (f *Folder) search(keyword string) {
 	}
 }
 
-func (f *Folder) add(c Component) {
+func (f *Folder) add(c File) {
 	f.components = append(f.components, c)
 }
