@@ -56,3 +56,21 @@ type MinusOperator struct {
 func (o MinusOperator) Result() int {
 	return o.a - o.b
 }
+
+// add multi
+
+type MultiOperatorFactory struct{}
+
+func (MultiOperatorFactory) Create() Operator {
+	return &MultiOperator{
+		OperatorBase: &OperatorBase{},
+	}
+}
+
+type MultiOperator struct {
+	*OperatorBase
+}
+
+func (m MultiOperator) Result() int {
+	return m.a * m.b
+}
