@@ -56,6 +56,7 @@ func (thai ThailandFactory) BuyAdidas() AbstractAdidas {
 	adidas = new(ThailandAdidas)
 	return adidas
 }
+
 func (thai ThailandFactory) BuyFila() AbstractFila {
 	var fila AbstractFila
 	fila = new(ThailandFila)
@@ -98,6 +99,7 @@ func (am AmericaFactory) BuyAdidas() AbstractAdidas {
 	adidas = new(AmericaAdidas)
 	return adidas
 }
+
 func (am AmericaFactory) BuyFila() AbstractFila {
 	var fila AbstractFila
 	fila = new(AmericaFila)
