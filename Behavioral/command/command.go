@@ -62,4 +62,3 @@ func (b *Box) PressButton1() {
 func (b *Box) PressButton2() {
 	b.button2.Execute()
 }
-
