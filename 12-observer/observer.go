@@ -42,7 +42,7 @@ func (cs *CreateSubject) Deregister(ob Observer) {
 }
 
 func (cs *CreateSubject) Notify(event *Event) {
-	for ob, _ := range cs.Observers {
+	for ob := range cs.Observers {
 		ob.Update(event)
 	}
 }
