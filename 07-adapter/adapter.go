@@ -1,1 +1,1 @@
-package _7_adapter
+package main

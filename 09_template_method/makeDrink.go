@@ -1,1 +1,1 @@
-package _9_template_method
+package main

@@ -1,1 +1,1 @@
-package _1_strategy
+package main

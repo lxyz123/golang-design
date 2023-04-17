@@ -1,1 +1,1 @@
-package _7_flyweight
+package main
